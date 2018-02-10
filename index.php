@@ -35,16 +35,43 @@
     }
     
     
+    $mediaType='anime';
+    
     echo '<br><br><br>' ;
+    ///////////////////////////////////
+    //// fetch started ids from user list entries demo
+    ///////////////////////////////////
+    
+    
+    $result1 = MalAppInfoXmlParser::getStartedUserTitleIdsFromXml ($xml, $mediaType); 
+    
+    echo 'test output started entries from malappinfo: <br>' ;   
+    echo '$result1->count = ' . count($result1);
+    echo '<pre>'; print_r($result1); echo '</pre>';
+    
+    
+    echo '<br><br><br>' ;
+    ///////////////////////////////////
+    //// fetch started ids from user list entries demo
+    ///////////////////////////////////
+    
+    
+    $result2 = MalAppInfoXmlParser::getStartedUserTitlesFromXml($xml, $mediaType); 
+    
+    echo 'test output unstarted entries from malappinfo: <br>' ;    
+    echo '<pre>'; print_r($result2); echo '</pre>';
+    
+    
+    echo '<br><br><br>' ;            
     ///////////////////////////////////
     //// fetch completed user list entries demo
     ///////////////////////////////////
     
-    $mediaType='anime';
-    $result = MalAppInfoXmlParser::getUserCompletedTitlesFromXml ($xml, $mediaType); 
+    
+    $resultC = MalAppInfoXmlParser::getUserCompletedTitlesFromXml ($xml, $mediaType); 
     
     echo 'test output complete anime entries from malappinfo: <br>' ;    
-    echo '<pre>'; print_r($result); echo '</pre>';
+    echo '<pre>'; print_r($resultC); echo '</pre>';
 
 ?>        
         
